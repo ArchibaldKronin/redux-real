@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useInput } from '../../hooks/useInput';
-import { addTodo } from '../../store/todos/todosSlice';
+import { todoAdded } from '../../store/todos/todosSlice';
 import { useDispatch } from 'react-redux'
 
 export const ToDoAdder = () => {
@@ -10,7 +10,7 @@ export const ToDoAdder = () => {
     const dispatch = useDispatch();
 
     const handleAddToDo = () => {
-        dispatch(addTodo(text));
+        dispatch(todoAdded(text));
         reset();
     }
 
