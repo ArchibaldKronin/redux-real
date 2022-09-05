@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+export const selectTodos = (state) => state.todos.todos;
+
 const initialState = {
     todos: [
         { id: Date.now(), title: 'Learn React', completed: true },

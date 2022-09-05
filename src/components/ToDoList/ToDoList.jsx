@@ -1,14 +1,14 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { themeStates } from '../../store/theme/themeSlice';
-import { todoDeleted, todoToggled } from '../../store/todos/todosSlice';
+import { selectTheme, themeStates } from '../../store/theme/themeSlice';
+import { selectTodos, todoDeleted, todoToggled } from '../../store/todos/todosSlice';
 import { ToDoItem } from '../ToDoItem/ToDoItem';
 import styles from './ToDoList.module.css'
 
 export const ToDoList = () => {
 
-    const toDoListArray = useSelector((state) => state.todos.todos);
-    const theme = useSelector(state => state.theme.theme)
+    const toDoListArray = useSelector(selectTodos);
+    const theme = useSelector(selectTheme);
 
     const dispatch = useDispatch();
 
