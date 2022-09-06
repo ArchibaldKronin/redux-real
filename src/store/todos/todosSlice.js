@@ -21,24 +21,12 @@ const initialState = {
 
 export const loadedTodos = createAsyncThunk('todos/loadedTodos', async (_, { rejectWithValue }) => {
     try {
-        //https://jsonplaceholder.typicode.com/todos
-        const response = await axios.get('https://js3ewrsdficode.com/todos');
+        const response = await axios.get('https://jsonplaceholder.typicode.com/todos');
         console.log(response);
         return response.data;
     }
     catch (error) { return rejectWithValue(error) }
 })
-
-// export const loadedTodos = createAsyncThunk('todos/loadedTodos', async () => {
-//     try {
-//         //https://jsonplaceholder.typicode.com/todos
-//         const response = await axios.get('https://jфываываcode.com/todos');
-//         console.log(response);
-//         return response.data;
-//     }
-//     catch (error) { console.log(1) }
-
-// })
 
 const todosSlice = createSlice({
     name: 'todos',
